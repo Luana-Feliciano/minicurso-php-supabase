@@ -1,24 +1,34 @@
 <?php
+require_once 'config/config.php';
+
 $message = '';
 $message_type = '';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+print_r($_POST);
+
+if(isset($_POST['btnacao'])){
+
     $nome = $_POST['nome'];
     $email = $_POST['email'];
-    $senha = $_POST['password'];
-    $confirma_senha = $_POST['confirm_password'];
+    $senha = sha1($_POST['senha']);
+    $confirma_senha = sha1($_POST['confirma_senha']);
 
-    if (empty($nome) || empty($email) || empty($senha)) {
-        $message = "Todos os campos são obrigatórios!";
-        $message_type = "danger";
-    } elseif ($senha !== $confirma_senha) {
-        $message = "As senhas não coincidem!";
-        $message_type = "danger";
-    } else {
+    if($senha <> $confirma_senha){
+        $erro .= "As senhas nao conferem"; 
+    }
 
-        //
+    if(strlen(trim($erro))==0){
+
+        $sql = "INSERT INTO usuarios (nome, email, senha) values ( '$nome', '$email', '$senha')";
+        $res = pg_query($con, $sql);
+
+        echo $sql;
+
+        echo pg_last_error($con); 
     }
 }
+
+
 ?>
 
 <?php if ($message): ?>
