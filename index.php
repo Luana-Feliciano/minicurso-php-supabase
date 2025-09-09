@@ -5,13 +5,13 @@ $page = isset($_GET['page']) ? $_GET['page'] : 'login';
 
 $user_is_logged_in = isset($_SESSION['user']);
 
-if (!$user_is_logged_in && $page !== 'login' && $page !== 'cadastro') {
-    $page = 'login';
-}
+// if (!$user_is_logged_in && $page !== 'login' && $page !== 'cadastro') {
+//     $page = 'login';
+// }
 
-if ($user_is_logged_in && $page === 'login') {
-    $page = 'dashboard';
-}
+// if ($user_is_logged_in && $page === 'login') {
+//     $page = 'dashboard';
+// }
 
 include 'views/partials/header.php';//cabecalho
 
@@ -29,6 +29,11 @@ switch ($page) {
     case 'cadastro':
         $pageTitle = 'Cadastro';
         include 'views/cadastro.php';
+        break;
+    
+     case 'lista_usuario':
+        $pageTitle = 'Listagem de Usuários';
+        include 'views/lista_usuario.php';
         break;
 
     case 'login':
