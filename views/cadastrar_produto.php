@@ -5,7 +5,7 @@
             <div class="card shadow-sm mb-5">
                 <div class="card-body p-4 p-lg-5">
                     <div class="text-center mb-4">
-                        <i class="bi bi-box-seam" style="font-size: 3rem; color: #0d6efd;"></i>
+                        <i class="icone bi bi-box-seam" style="font-size: 3rem;"></i>
                         <h3 class="card-title mt-2">Cadastro de Produto</h3>
                         <p class="text-muted">Preencha os dados para adicionar um novo produto.</p>
                     </div>
@@ -59,7 +59,7 @@
 
             <div class="mt-5">
                 <div class="text-center mb-4">
-                    <i class="bi bi-list-ul" style="font-size: 3rem; color: #0d6efd;"></i>
+                    <i class="icone bi bi-list-ul" style="font-size: 3rem;"></i>
                     <h3 class="card-title mt-2">Produtos Cadastrados</h3>
                 </div>
                 <div class="table-responsive">

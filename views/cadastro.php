@@ -1,5 +1,4 @@
 <?php
-require_once 'config/config.php';
 
 $message = '';
 $message_type = '';
@@ -43,7 +42,7 @@ if(isset($_POST['btnacao'])){
             <div class="card-body p-4">
 
                 <div class="text-center mb-4">
-                    <i class="bi bi-person-plus-fill" style="font-size: 3rem;"></i>
+                    <i class="icone bi bi-person-plus-fill" style="font-size: 3rem;"></i>
                     <h3 class="card-title mt-2">Criar Nova Conta</h3>
                     <p class="text-muted">Preencha os dados para se registrar no sistema.</p>
                 </div>
@@ -93,7 +92,6 @@ if(isset($_POST['btnacao'])){
                 <div class="text-center">
                     <p class="text-muted small">Já tem uma conta? <a href="index.php?page=login">Entre aqui</a></p>
                 </div>
-
             </div>
         </div>
     </div>
