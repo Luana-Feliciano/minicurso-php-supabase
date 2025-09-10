@@ -31,6 +31,11 @@ switch ($page) {
         $pageTitle = 'Cadastro';
         include 'views/cadastro.php';
         break;
+    
+     case 'lista_usuario':
+        $pageTitle = 'Listagem de Usuários';
+        include 'views/lista_usuario.php';
+        break;
 
     case 'login':
     default:
