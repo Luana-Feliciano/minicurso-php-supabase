@@ -32,11 +32,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
             </a>
 
             <div class="d-flex align-items-center gap-3">
-                <span class="fw-bold">
-                    Bem vindo <?= $_SESSION['username'] ?? ''; ?>
-                </span>
-                
                 <?php if (isset($_SESSION['user'])): ?>
+                    <span class="fw-bold">
+                        Bem vindo <?= $_SESSION['username'] ?? ''; ?>
+                    </span>
                     <a class="nav-link" href="index.php?action=logout"> <i class="bi bi-box-arrow-right"></i> Sair </a>
                 <?php endif; ?>
             </div>
