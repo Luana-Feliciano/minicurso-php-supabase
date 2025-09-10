@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require 'config.php';
+require_once 'config.php';
 include 'views/partials/header.php';//cabecalho
 
 $page = isset($_GET['page']) ? $_GET['page'] : 'login';
@@ -12,34 +12,25 @@ if (!$user_is_logged_in && $page !== 'login' && $page !== 'cadastro') {
     $page = 'login';
 }
 
-if ($user_is_logged_in && ($page === 'login' || $page === 'cadastro')) {
-    $page = 'cadastrar_produto';
+if ($user_is_logged_in && ($page === 'login' || $page === 'cadastro') && !isset($_GET['editUser'])) {
+    $page = 'lista_usuario';
 }
 
 switch ($page) {
-    case 'dashboard':
-        $pageTitle = 'Dashboard de Produtos';
-        include 'views/dashboard.php';
-        break;
-
     case 'cadastrar_produto':
-        $pageTitle = 'Novo Produto';
         include 'views/cadastrar_produto.php';
         break;
     
     case 'cadastro':
-        $pageTitle = 'Cadastro';
         include 'views/cadastro.php';
         break;
     
-     case 'lista_usuario':
-        $pageTitle = 'Listagem de Usuários';
+    case 'lista_usuario':
         include 'views/lista_usuario.php';
         break;
 
     case 'login':
     default:
-        $pageTitle = 'Login';
         include 'views/login.php';
         break;
 }

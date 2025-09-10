@@ -1,8 +1,5 @@
 <?php
 
-require_once './config.php';
-
-
 $message = '';
 $message_type = '';
 
@@ -43,7 +40,7 @@ $res = pg_query($con, $sql);
             <div class="card-body p-4">
                 
                 <div class="text-center mb-4">
-                    <i class="bi bi-person-plus-fill" style="font-size: 3rem;"></i>
+                    <i class="icone bi bi-person-plus-fill" style="font-size: 3rem;"></i>
                     <h3 class="card-title mt-2">Usuários Cadastrados</h3>
                 </div>
                      <div>
@@ -72,7 +69,7 @@ $res = pg_query($con, $sql);
                             <td><?=$email?></td>
                             <td><?= ($ativo == true) ? "Sim" : "Não";  ?></td>
                             <td>
-                                <a href="?page=cadastro&edit=<?=$user?>"><i class="bi bi-pencil-fill"></i></a>
+                                <a href="?page=cadastro&editUser=<?=$user?>"><i class="bi bi-pencil-fill"></i></a>
                             </td>
                             <td>
                                 
@@ -82,13 +79,6 @@ $res = pg_query($con, $sql);
                     <?php } ?>
                 </tbody>
                 </table>
-
-                <hr class="my-4">
-
-                <div class="text-center">
-                    <p class="text-muted small">Já tem uma conta? <a href="index.php?page=login">Entre aqui</a></p>
-                </div>
-
             </div>
         </div>
     </div>

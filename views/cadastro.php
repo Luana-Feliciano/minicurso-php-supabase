@@ -59,8 +59,8 @@ if(isset($_POST['btnacao'])){
 }
 
 
-if(isset($_GET['edit'])){
-    $user = (int)$_GET['edit'];
+if(isset($_GET['editUser'])){
+    $user = (int)$_GET['editUser'];
 
     $sql = "SELECT * from usuarios where usuario = $user ";
     $res = pg_query($con, $sql);

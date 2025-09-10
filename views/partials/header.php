@@ -23,23 +23,33 @@ if (isset($_GET['action']) && $_GET['action'] == 'logout') {
 </head>
 
 <body>
-
-   <nav class="navbar navbar-expand-lg mb-4">
-        <div class="container d-flex justify-content-between align-items-center">
-            
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
             <a class="navbar-brand d-flex align-items-center" href="index.php">
                 <img src="assets/logo-telecontrol.png" alt="Telecontrol" height="35" class="me-2">
             </a>
-
-            <div class="d-flex align-items-center gap-3">
-                <?php if (isset($_SESSION['user'])): ?>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <?php if (isset($_SESSION['user'])): ?>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.php?page=cadastrar_produto">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="index.php?page=lista_usuario">Usuarios</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center gap-3">
                     <span class="fw-bold">
                         Bem vindo <?= $_SESSION['username'] ?? ''; ?>
                     </span>
                     <a class="nav-link" href="index.php?action=logout"> <i class="bi bi-box-arrow-right"></i> Sair </a>
-                <?php endif; ?>
-            </div>
+                </div>
+            <?php endif; ?>
         </div>
     </nav>
 
-    <main class="container">
+    <main class="container py-5 px-4">

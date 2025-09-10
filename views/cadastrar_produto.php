@@ -1,4 +1,4 @@
-<div class="container py-5 px-4">
+
     <div class="row justify-content-center">
         <div class="col-md-10 col-lg-9">
 
@@ -96,4 +96,3 @@
 
         </div>
     </div>
-</div>
