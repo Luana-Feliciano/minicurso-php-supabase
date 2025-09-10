@@ -23,7 +23,7 @@ function realizarLogin($data) {
         if (sha1($senha) === $user['senha']) {
             $_SESSION['user'] = $user['usuario'];
             $_SESSION['username'] = $user['nome'];
-            header("Location: index.php?page=cadastrar_produto");
+            header("Location: index.php?page=lista_usuario");
             exit;
         }
     }
